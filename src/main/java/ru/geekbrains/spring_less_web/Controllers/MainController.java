@@ -5,8 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.spring_less_web.Model.Client;
+import ru.geekbrains.spring_less_web.Model.Product;
 import ru.geekbrains.spring_less_web.Repository.ClientRepository;
+import ru.geekbrains.spring_less_web.Repository.ProductRepository;
 import ru.geekbrains.spring_less_web.Service.ClientService;
+import ru.geekbrains.spring_less_web.Service.ProductService;
 
 import java.util.List;
 
@@ -34,6 +37,19 @@ public class MainController {
         clientRepository.addClient(client);
     }
 
+    @Autowired
+    private ProductRepository productRepository;
 
+    @Autowired
+    private ProductService prService;
 
+    @GetMapping("/product/all")
+    public List<Product> getProductList(){
+        return productRepository.showProductList();
+    }
+
+    @PostMapping("/product/add")
+    public void addProductPost(@RequestBody Product product){
+        productRepository.addProductList(product);
+    }
 }
