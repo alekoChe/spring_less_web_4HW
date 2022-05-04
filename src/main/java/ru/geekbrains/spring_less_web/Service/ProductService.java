@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 //import ru.gbAleko.spring_lesson_3HW.model.Product;
 //import ru.gbAleko.spring_lesson_3HW.repository.ProductRepository;
 import ru.geekbrains.spring_less_web.Model.Product;
+import ru.geekbrains.spring_less_web.Repository.Cart;
 import ru.geekbrains.spring_less_web.Repository.ProductRepository;
 
 import java.util.List;
@@ -14,6 +15,8 @@ public class ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+    @Autowired
+    private Cart cart;
 
 
     public Product getProductAccordingId(Long id){
@@ -26,6 +29,16 @@ public class ProductService {
 
     public void addProduct(Product product) {
         productRepository.addProductList(product);
+    }
+
+    public void addProductIntoCart(Long id) {cart.addCartList(productRepository.findById(id));}
+
+    public List<Product> getCartList() {
+        return cart.showCartList();
+    }
+
+    public void deleteProductFromCart(Long id) {
+        cart.deleteProductFromCartList(id);
     }
 
 }
