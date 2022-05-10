@@ -1,11 +1,20 @@
 package ru.geekbrains.spring_less_web.Model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "products")
 public class Product {
 
-    private String title;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "cost")
     private int cost;
 
     public String getTitle() {
@@ -37,6 +46,8 @@ public class Product {
         this.id = id;
         this.cost = cost;
     }
+
+    public Product() {}
 
     @Override
     public String toString() {

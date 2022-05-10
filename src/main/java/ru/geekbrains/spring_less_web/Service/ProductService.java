@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 //import ru.gbAleko.spring_lesson_3HW.model.Product;
 //import ru.gbAleko.spring_lesson_3HW.repository.ProductRepository;
 import ru.geekbrains.spring_less_web.Model.Product;
+import ru.geekbrains.spring_less_web.Model.SessionFactoryUtils;
 import ru.geekbrains.spring_less_web.Repository.Cart;
 import ru.geekbrains.spring_less_web.Repository.ProductRepository;
 
@@ -17,6 +18,8 @@ public class ProductService {
     private ProductRepository productRepository;
     @Autowired
     private Cart cart;
+    @Autowired
+    private SessionFactoryUtils sessionFactoryUtils;
 
 
     public Product getProductAccordingId(Long id){
