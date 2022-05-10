@@ -1,10 +1,13 @@
-package ru.geekbrains.spring_less_web.Model;
+package ru.geekbrains.spring_less_web.Service;
 
 import org.hibernate.Session;
+import ru.geekbrains.spring_less_web.Model.Product;
+import ru.geekbrains.spring_less_web.Model.ProductDao;
+import ru.geekbrains.spring_less_web.Model.SessionFactoryUtils;
 
 import java.util.List;
 
-public class ProductDaoImpl implements ProductDao{
+public class ProductDaoImpl implements ProductDao {
 
     private SessionFactoryUtils sessionFactoryUtils;
 

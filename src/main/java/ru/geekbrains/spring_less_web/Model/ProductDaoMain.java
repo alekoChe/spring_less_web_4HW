@@ -1,7 +1,6 @@
 package ru.geekbrains.spring_less_web.Model;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.geekbrains.spring_less_web.Service.AppConfig;
+import ru.geekbrains.spring_less_web.Service.ProductDaoImpl;
 
 public class ProductDaoMain {
 
