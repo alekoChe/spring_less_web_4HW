@@ -9,12 +9,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
-    <script src="poductIndex.js"></script>
-    <title>Наши продукты</title>
+    <script src="cartIndex.js"></script>
+    <title>Ваша корзина</title>
 </head>
 <body>
 <div class="container" ng-controller="indexController">
-    <h3>Список продуктов</h3>
+    <h3>Содержимое корзины</h3>
     <table class="table table-hover" cellpadding="0" cellspacing="0">
         <tr>
             <td>ID</td>
@@ -22,13 +22,11 @@
             <td>Цена</td>
         </tr>
         <tbody>
-        <tr ng-repeat="s in productList">
+        <tr ng-repeat="s in cartList">
             <td>{{s.id}}</td>
             <td>{{s.title}}</td>
             <td>{{s.cost}}</td>
-            <td>
-                <button class="btn btn-primary" ng-click="addProductIntoCart(s.id)">Добавить в корзину</button>
-            </td>
+            <td><button class="btn btn-danger" ng-click="deleteProductFromCart(s.id)">Удалить из корзины</button></td>
         </tbody>
     </table>
 </div>
